@@ -5,6 +5,6 @@ class Index
 {
     public function index()
     {
-        return '表示已经入魔了';
+        return view();
     }
 }

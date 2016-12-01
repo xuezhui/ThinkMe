@@ -1,105 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ThinkAdmin--系统安装</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="_STATIC_/bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="_STATIC_/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="_STATIC_/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="_STATIC_/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="_STATIC_/css/skins/_all-skins.min.css">
+{include file="public/header"}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="_STATIC_/js/html5shiv.min.js"></script>
-    <script src="_STATIC_/js/respond.min.js"></script>
-    <![endif]-->
-</head>
-<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
-<div class="wrapper">
-
-    <header class="main-header">
-        <nav class="navbar navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a href="_STATIC_/index2.html" class="navbar-brand"><b>ThinkAdmin</b></a>
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-    </header>
     <!-- Full Width Column -->
-    <div class="content-wrapper">
+
         <div class="container">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    系统安装
-                    <small>Version 1.0</small>
-                </h1>
-
-            </section>
 
             <!-- Main content -->
             <section class="content">
-                <div class="callout callout-info">
-                    <h4>用户使用协议</h4>
+                <div class="box box-default collapsed-box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">用户使用协议</h3>
 
-                    <p>正在努力创建一个简单高效的tp后台管理框架</p>
-                </div>
-                <div class="box box-default">
-                    <div class="box-body">
-                        <a type="button" href="{:url('step2')}" class="btn btn-primary">同意安装协议</a>
-                        <a type="button" href="{:config('WEBSITE_DOMAIN')}" class="btn btn-default">不同意</a>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                        正在努力创建一个简单高效的tp后台管理框架
                     </div>
                     <!-- /.box-body -->
+                </div>
+                <div class="box-footer">
+                        <a type="button" href="{:config('WEBSITE_DOMAIN')}" class="btn btn-default">不同意</a>
+                        <a type="button" href="{:url('step2')}" class="btn btn-info pull-right">同意安装协议</a>
                 </div>
                 <!-- /.box -->
             </section>
             <!-- /.content -->
         </div>
         <!-- /.container -->
-    </div>
 
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="pull-right hidden-xs">
-                <b>Version</b> 2.3.7
-            </div>
-            <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-            reserved.
-        </div>
-        <!-- /.container -->
-    </footer>
-</div>
-<!-- ./wrapper -->
 
-<!-- jQuery 2.2.3 -->
-<script src="_STATIC_/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="_STATIC_/bootstrap/js/bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="_STATIC_/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="_STATIC_/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="_STATIC_/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="_STATIC_/js/demo.js"></script>
-</body>
-</html>
+{include file="public/footer"}

@@ -23,4 +23,13 @@ class Index extends Controller
     public function index(){
       return view();
     }
+
+    public function step2()
+    {
+        return view();
+    }
+    public function step3()
+    {
+        return view();
+    }
 }

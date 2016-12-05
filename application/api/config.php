@@ -5,7 +5,7 @@
  * Date: 2016/11/30
  * Time: 11:22
  * QQ:243514438
- * Copyright：www.luchanglong.com.cn
+ * Copyright：www.la998.com
  */
 return [
     'default_return_type'=>'json'

@@ -10,6 +10,7 @@
 
 namespace app\install\controller;
 use think\Controller;
+use think\Request;
 
 class Index extends Controller
 {
@@ -30,6 +31,18 @@ class Index extends Controller
     }
     public function step3()
     {
+        if(Request::instance()->isPost()){
+            $data=Request::instance()->param();
+            if(empty($data['db']['DB_HOST'])) $data['db']['DB_HOST']='localhost';
+            if(empty($data['db']['DB_NAME'])) $this->error('数据库名不能为空');
+            if(empty($data['db']['DB_USER'])) $data['db']['DB_USER']='root';
+            if(empty($data['db']['DB_PWD'])) $data['db']['DB_PWD']='';
+            if(empty($data['db']['DB_PORT'])) $data['db']['DB_PORT']='3306';
+            if(empty($data['db']['DB_PREFIX'])) $data['db']['DB_PREFIX']='';
+            if(empty($data['admin']['username'])) $data['admin']['username']='admin';
+            if(empty($data['admin']['pass'])) $this->error('管理员密码不能为空');
+
+        }
         return view();
     }
 }

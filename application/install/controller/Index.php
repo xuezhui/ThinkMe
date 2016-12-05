@@ -41,8 +41,9 @@ class Index extends Controller
             if(empty($data['db']['DB_PREFIX'])) $data['db']['DB_PREFIX']='';
             if(empty($data['admin']['username'])) $data['admin']['username']='admin';
             if(empty($data['admin']['pass'])) $this->error('管理员密码不能为空');
-
+            var_dump($data);
         }
+
         return view();
     }
 }

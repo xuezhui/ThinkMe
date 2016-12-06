@@ -1,4 +1,7 @@
 {include file="public/header"}
+<style>
+    .box{margin-bottom: 0px;}
+</style>
 <div class="container">
     <section class="content">
         <div class="box box-info">
@@ -64,8 +67,40 @@
                 </div>
             </div>
         </div>
+        <div class="box box-warning">
+            <div class="box-header with-border">
+                <h3 class="box-title">函数支持检查</h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table no-margin">
+                        <thead>
+                        <tr>
+                            <th>函数</th>
+                            <th>所需配置</th>
+                            <th>当前配置</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {volist name="func" id="vo"}
+                        <tr>
+                            <td>{$vo.0}</td>
+                            <td>{$vo.1}</td>
+                            <td><span class="label label-{$vo.3}">{$vo.2}</span></td>
+                        </tr>
+                        {/volist}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <div class="box-footer clearfix">
-            <a href="{:config('WEBSITE_DOMAIN')}" class="btn btn-default  btn-flat pull-left">上一步</a>
+            <a href="{:url('index')}" class="btn btn-default  btn-flat pull-left">{:config('WEBSITE_DOMAIN')}上一步</a>
             <a href="{:url('step3')}" class="btn btn-info btn-flat pull-right">下一步</a>
         </div>
     </section>

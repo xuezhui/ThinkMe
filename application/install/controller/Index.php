@@ -18,24 +18,32 @@ class Index extends Controller
 
     protected function _initialize()
     {
-        if (is_file(APP_PATH . DIRECTORY_SEPARATOR . 'install.lock')) {
+        if (is_file(APP_PATH . DIRECTORY_SEPARATOR . 'extra/install.lock')) {
             $this->error('已经成功安装了本系统，请不要重复安装!', 'http://' . $_SERVER['HTTP_HOST']);
         }
     }
     public function index()
     {
+
         return view();
     }
     public function step2()
     {
+        session('error',false);
         $env = check_env();
         $right=check_right();
+        $func=check_func();
         $this->assign('env',$env);
         $this->assign('right',$right);
+        $this->assign('func',$func);
         return view();
     }
     public function step3()
     {
+        if(session('error')){
+            session('error',false);
+            $this->error('检测不通过，请检查系统环境和文件权限是否正确！');
+        }
         if (Request::instance()->isPost()) {
             $data = Request::instance()->param();
             if (empty($data['db']['DB_HOST'])) $data['db']['DB_HOST'] = 'localhost';
@@ -48,6 +56,17 @@ class Index extends Controller
             if (empty($data['admin']['pass'])) $this->error('管理员密码不能为空');
             session('db', $data['db']);
             session('admin', $data['admin']);
+        }
+        return view();
+    }
+
+    public function step4(){
+        $db=session('db');
+        $admin=session('admin');
+        if($db && $admin){
+
+        }else{
+          $this->error('配置丢失，请重新填写','step3');
         }
         return view();
     }

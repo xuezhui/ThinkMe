@@ -1,10 +1,7 @@
 {include file="public/header"}
 <div class="container">
-    <!-- general form elements -->
     <section class="content">
-        <!-- /.box-header -->
-        <!-- form start -->
-        <form class="form-horizontal" id="form" method="post" action="{:url('step3')}">
+        <form class="form-horizontal" id="form" method="post" action="{:url('step4')}">
             <div class="box box-default ">
                 <div class="box-header with-border">
                     <h3 class="box-title">填写数据库信息</h3>
@@ -12,7 +9,6 @@
                         <button type="button" class="btn btn-box-tool" data-widget="collapse">
                         </button>
                     </div>
-                    <!-- /.box-tools -->
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">服务器</label>
@@ -65,15 +61,13 @@
                     </div>
                 </div>
                 <div class="box-footer">
-                    <a type="button" href="{:url('index')}" class="btn btn-default">上一步</a>
+                    <a type="button" href="{:url('step3')}" class="btn btn-default">上一步</a>
                     <a type="button" target-form="form" onclick="document.getElementById('form').submit();return false;"
-                       class="btn btn-primary pull-right">下一步</a>
+                       class="btn btn-primary pull-right">开始安装</a>
                 </div>
 
             </div>
-            <!-- /.box-body -->
         </form>
     </section>
-    <!-- /.box -->
 </div>
 {include file="public/footer"}

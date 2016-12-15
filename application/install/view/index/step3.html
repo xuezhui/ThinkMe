@@ -61,8 +61,8 @@
                     </div>
                 </div>
                 <div class="box-footer">
-                    <a type="button" href="{:url('step3')}" class="btn btn-default">上一步</a>
-                    <a type="button" target-form="form" onclick="document.getElementById('form').submit();return false;"
+                    <a type="button" href="{:url('step2')}" class="btn btn-default">上一步</a>
+                    <a type="button" target-form="form" onclick="submit();"
                        class="btn btn-primary pull-right">开始安装</a>
                 </div>
 
@@ -70,4 +70,10 @@
         </form>
     </section>
 </div>
+<script>
+    function submit() {
+        document.getElementById("form").submit();
+    }
+
+</script>
 {include file="public/footer"}

@@ -40,10 +40,16 @@ class Index extends Controller
     }
     public function step3()
     {
+
         if(session('error')){
             session('error',false);
             $this->error('检测不通过，请检查系统环境和文件权限是否正确！');
         }
+        return view();
+    }
+
+    public function step4(){
+
         if (Request::instance()->isPost()) {
             $data = Request::instance()->param();
             if (empty($data['db']['DB_HOST'])) $data['db']['DB_HOST'] = 'localhost';
@@ -57,13 +63,11 @@ class Index extends Controller
             session('db', $data['db']);
             session('admin', $data['admin']);
         }
-        return view();
-    }
 
-    public function step4(){
-        $db=session('db');
+        $dbconfig=session('db');
         $admin=session('admin');
-        if($db && $admin){
+        if($dbconfig && $admin){
+               //处理管理员密码
 
         }else{
           $this->error('配置丢失，请重新填写','step3');
